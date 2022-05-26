@@ -2,7 +2,7 @@ import {wait} from '../src/wait'
 import * as process from 'process'
 import * as cp from 'child_process'
 import * as path from 'path'
-import {expect, test} from '@jest/globals'
+import {expect, test, jest} from '@jest/globals'
 
 test('throws invalid number', async () => {
   const input = parseInt('foo', 10)
@@ -27,3 +27,17 @@ test('test runs', () => {
   }
   console.log(cp.execFileSync(np, [ip], options).toString())
 })
+
+// import * as core from '@actions/core'
+// import { run } from '../src/main'
+
+// jest.mock('@actions/core')
+
+// describe('When running the action', () => {
+//   const fakeSetOutput = core.setOutput as jest.MockedFunction<typeof core.setOutPut>
+
+//   test('it should set the release-url output parameter', async () => {
+//     await run()
+//     expect(fackeSetOutput).toHaveBeenCalledWith('release-url', expect.anything())
+//   })
+// })
